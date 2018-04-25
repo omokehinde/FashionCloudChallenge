@@ -4,7 +4,8 @@
   "description": "Cache API",
   "main": "server.js",
   "scripts": {
-    "start": "node server/server.js"
+    "start": "node server/server.js",
+    "test": "mocha server/test/cache.js --timeout 10000"
   },
   "author": "Omokehinde I.",
   "license": "ISC",
@@ -16,5 +17,10 @@
     "mongoose": "^5.0.16",
     "morgan": "^1.9.0",
     "uuid": "^3.2.1"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
+    "mocha": "^5.1.1"
   }
 }
