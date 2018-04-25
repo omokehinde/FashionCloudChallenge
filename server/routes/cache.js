@@ -73,7 +73,5 @@ router.delete('/', (req, res) => {
     });
 });
 
-router.delete()
-
 
 module.exports = router;
