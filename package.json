@@ -4,17 +4,14 @@
   "description": "Cache API",
   "main": "server.js",
   "scripts": {
-    "start": "node server/server.js",
-    "test": "test"
+    "start": "node server/server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/omokehinde/FashionCloudChallenge.git"
-  },
+  
   "author": "Omokehinde I.",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "cacheman-mongo": "^1.0.3",
     "express": "^4.16.3",
     "jsonwebtoken": "^8.2.1",
     "mongoose": "^5.0.16",

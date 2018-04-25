@@ -25,10 +25,15 @@ db.once('open', function () {
     console.log('Connected to MongoDB');
 });
 
+// Route file
+let cache = require('./routes/cache');
+
 // APIs
 app.get('/api/users/index', (req, res) => {
     res.json({ name: "Micheal Smith" });
 });
+
+app.use('/api/v1', cache);
 
 app.listen(3030, () => {
     console.log('Express is now listening on port 3030... ');
