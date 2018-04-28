@@ -3,6 +3,7 @@ const morgan = require('morgan');             // log requests to the console (ex
 const bodyParser = require('body-parser');    // pull information from HTML POST (express4)
 const mongoose = require('mongoose');
 const config = require('./config/database');
+// const config = require('config');
 
 // init app
 const app = express();
@@ -13,6 +14,7 @@ app.use(bodyParser.json());                                     // parse applica
 app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
 
 mongoose.connect(config.database);
+// mongoose.connect(config.DBHost);
 let db = mongoose.connection;
 
 // check for db errors
@@ -26,10 +28,10 @@ db.once('open', function () {
 });
 
 // Route file
-// let cacheRoute = require('./routes/cache');
+let cacheRoute = require('./routes/cache');
 
 // APIs
-// app.use('/api/v1', cacheRoute);
+app.use('/api/v1', cacheRoute);
 
 app.listen(3030, () => {
     console.log('Express is now listening on port 3030... ');
